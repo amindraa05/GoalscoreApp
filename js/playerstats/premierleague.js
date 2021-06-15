@@ -1,9 +1,11 @@
-fetch('https://api.football-data.org/v2/competitions/PL/scorers',{
-    "method" : "GET",
-    "headers" : {
-        "X-Auth-Token" : "e88f743b2b444752a685b7d76e59b39e"
-    }
-})
+fetch('../js/playerstats/premierleague.json'
+// ,{
+//     "method" : "GET",
+//     "headers" : {
+//         "X-Auth-Token" : "e88f743b2b444752a685b7d76e59b39e"
+//     }
+// }
+)
 .then(response => response.json())
 .then((data)=>{
     let result = data.scorers

@@ -192,64 +192,42 @@ laliga()
 premierleague()
 ligue1()
 
-// Fetch Local News
-// const mainnews = ()=>{
-//   fetch('https://newsapi.org/v2/top-headlines?country=id&apiKey=713ae87c31854452b8234e414b66bd9e')
-//   .then((response) => response.json())
-//   .then((data)=>{
-//     let result = data.articles;
-//     let maks = 3;
-//     // head news image
-//     document.getElementById('starting-news-home').src = result[0].urlToImage
-//     document.getElementById('titletopnewshome').innerHTML = result[0].title
-//     // Other news Image (3)
-//     document.getElementById('sidenewsimg1').src = result[1].urlToImage
-//     document.getElementById('sidenewsimg2').src = result[2].urlToImage
-//     document.getElementById('sidenewsimg3').src = result[3].urlToImage
-//     // Other news Date (3)
-//     document.getElementById('sidenewsdate1').innerHTML = result[1].publishedAt
-//     document.getElementById('sidenewsdate2').innerHTML = result[2].publishedAt
-//     document.getElementById('sidenewsdate3').innerHTML = result[3].publishedAt
-//     // Other news Title (3)
-//     document.getElementById('sidenewstitle1').innerHTML = `${result[1].title.substr(0,70)}...`
-//     document.getElementById('sidenewstitle2').innerHTML = `${result[2].title.substr(0,70)}...`
-//     document.getElementById('sidenewstitle3').innerHTML = `${result[3].title.substr(0,70)}...`
-//   })
-// }
-
-//Fetch UCL
-fetch('https://api.football-data.org/v2/competitions/CL/scorers',{
-    "method" : "GET",
-    "headers" : {
-        "X-Auth-Token" : "7cfca04522084b4e818a63ea68c6978f"
-    }
-})
-.then(response => response.json())
-.then((data)=>{
-    let result = data.scorers
-    let maks = 1
-    let playername = ""
-    let clubname = ""
-    let goals = ""
-    for(let i = 0;i<maks;i++){
-      playername = result[i].player.name
-      clubname = result[i].team.name
-      goals = result[i].numberOfGoals
-    }
-    document.getElementById('statscl-player-name').innerHTML = playername;
-    document.getElementById('statscl-club-name').innerHTML = clubname;
-    document.getElementById('statscl-goals').textContent += goals
-    document.getElementById('statscl-goals').textContent += " Goals"
-})
+// Fetch UCL
+// fetch('https://api.football-data.org/v2/competitions/CL/scorers',{
+//     "method" : "GET",
+//     "headers" : {
+//         "X-Auth-Token" : "7cfca04522084b4e818a63ea68c6978f"
+//     }
+// })
+// .then(response => response.json())
+// .then((data)=>{
+//     let result = data.scorers
+//     let maks = 1
+//     let playername = ""
+//     let clubname = ""
+//     let goals = ""
+//     for(let i = 0;i<maks;i++){
+//       playername = result[i].player.name
+//       clubname = result[i].team.name
+//       goals = result[i].numberOfGoals
+//     }
+//     document.getElementById('statscl-player-name').innerHTML = playername;
+//     document.getElementById('statscl-club-name').innerHTML = clubname;
+//     document.getElementById('statscl-goals').textContent += goals
+//     document.getElementById('statscl-goals').textContent += " Goals"
+// })
 
 
 // Fetch Top Scorer EPL
-fetch('https://api.football-data.org/v2/competitions/PL/scorers',{
-    "method" : "GET",
-    "headers" : {
-        "X-Auth-Token" : "73c5bf0c1c30422cbeb8b1d734a1859e"
-    }
-})
+// url = https://api.football-data.org/v2/competitions/PL/scorers
+fetch('./js/playerstats/premierleague.json'
+// ,{
+//     "method" : "GET",
+//     "headers" : {
+//         "X-Auth-Token" : "73c5bf0c1c30422cbeb8b1d734a1859e"
+//     }
+// }
+)
 .then(response => response.json())
 .then((data)=>{
     let result = data.scorers
